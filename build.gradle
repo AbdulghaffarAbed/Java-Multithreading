@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+task hello {
+    doLast {
+        4.times {
+            print "$it "
+        }
+    }
+}
+
+task upper  {
+    doLast{
+        String expString = 'TUTORIALS point'
+        println "Original: " + expString
+        println "Upper case: " + expString.toUpperCase()
+    }
+
+}
+
